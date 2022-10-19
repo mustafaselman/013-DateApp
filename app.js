@@ -22,7 +22,27 @@ function currentTimeRotation(sec, min, hr)
 
 function currentTimeDigital(sec, min, hr)
 {
-    digitalClock.innerHTML = hr + ':' + min + ':' + sec;
+    if (hr<10){
+        digitalClock.innerHTML = '0'+ hr + ':' + min + ':' + sec;
+    }
+    if (min<10){
+        digitalClock.innerHTML =  hr + ':' + '0'+ min + ':' + sec;
+    }
+    if (sec<10){
+        digitalClock.innerHTML = hr + ':' + min + ':' + '0'+ sec;
+    }
+    if (min<10 && sec<10){
+        digitalClock.innerHTML =  hr + ':' + '0'+ min + ':' + '0'+ sec;
+    }
+    if (hr<10 && sec<10){
+        digitalClock.innerHTML = '0'+ hr + ':' +  min + ':' + '0'+ sec;
+    }
+    if (min<10 && hr<10){
+        digitalClock.innerHTML = '0'+ hr + ':' + '0'+  min + ':' + sec;
+    }
+    if (min<10 && hr<10 && sec<10){
+        digitalClock.innerHTML = '0'+ hr + ':' + '0'+  min + ':' +'0'+ sec;
+    }
 
 }
 
